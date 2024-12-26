@@ -1,4 +1,4 @@
-{{- defind "mycart.labels" }}
+{{- define "mychart.labels" }}
     labels:
         generator: helm
         deployedby: andrey
