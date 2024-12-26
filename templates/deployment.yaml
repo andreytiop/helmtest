@@ -17,6 +17,7 @@ spec:
       labels:
         app:  {{ .Values.appName }}
         tier: frontend
+        {{- include "mychart.labels" . | nindent 4 }}
     spec: # Pod spec
       containers:
       - name: mycontainer
