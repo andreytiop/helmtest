@@ -1,0 +1,9 @@
+appName: myhelmapp
+configmap:
+  name: helmmapconfigv1.1
+  data:
+    custom_header: "custom header helm"
+
+image:
+  name: "devopsjourney1/mywebapp"
+  tag: "latest"
