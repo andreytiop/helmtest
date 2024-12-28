@@ -17,7 +17,7 @@ spec:
       labels:
         app:  {{ .Values.appName }}
         tier: frontend
-        {{- include "mychart.labels" . | nindent 4 }}
+        {{- include "mychart.labels" . | nindent 8 }}
     spec: # Pod spec
       volumes:
       - name: task-pv-storage
