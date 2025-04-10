@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vault
+  name: vault-local
   namespace: argocd
 spec:
   destination:
@@ -9,20 +9,10 @@ spec:
     namespace: vault
   project: default
   source:
-    repoURL: https://helm.releases.hashicorp.com
-    chart: vault
-    targetRevision: 0.30.0
-    helm:
-      releaseName: vault
-      values: |
-        server:
-          dev:
-            enabled: true
-        ui:
-          enabled: true
+    repoURL: https://github.com/andreytiop/helmtest.git
+    targetRevision: main
+    path: vault
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
-    syncOptions:
-      - CreateNamespace=true
